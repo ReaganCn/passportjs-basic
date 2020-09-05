@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dot-env");
+  require("dotenv").config();
 }
 
 const express = require("express");
@@ -19,7 +19,7 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
